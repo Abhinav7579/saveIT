@@ -1,2 +1,2 @@
 
-export const JWT_PASS="abhinavsys123"
+export const JWT_PASS=""
