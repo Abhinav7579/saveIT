@@ -30,12 +30,12 @@ app.post("/api/v1/signup", (req, res) => __awaiter(void 0, void 0, void 0, funct
         password: zod_1.default.string().min(4, { message: "Password must be at least 4 characters" }).max(10, { message: "Password must be at most 10 characters" })
     });
     const safeparse = requiredbody.safeParse(req.body);
-    if (!safeparse.success) {
-        res.status(400).json({
-            message: "error in input"
-        });
-        return;
-    }
+    // if(!safeparse.success){
+    //     res.status(400).json({
+    //         message:"error in input"
+    //     })
+    //     return;
+    // }
     const username = req.body.username;
     const password = req.body.password;
     const hashpassword = yield bcrypt_1.default.hash(password, 5);

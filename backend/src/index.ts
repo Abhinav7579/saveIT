@@ -15,7 +15,7 @@ app.use(cors());
 
 app.post("/api/v1/signup",async (req,res)=>{
     const requiredbody = z.object({
-        username: z.string().min(3, { message: "Username must be at least 3 characters" }).max(10, { message: "Username must be at most 10 characters" }),
+        username: z.string().email(),
         password: z.string().min(4, { message: "Password must be at least 4 characters" }).max(10, { message: "Password must be at most 10 characters" })
     });
 
